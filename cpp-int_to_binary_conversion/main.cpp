@@ -41,8 +41,7 @@ std::string format_bits(std::string bits) {
     std::string inverted_bits {invert_bits(bits)};
 
     for (size_t i {}; i < inverted_bits.length(); ++i) {
-	std::string current_bit (1, inverted_bits[i]);
-	formated_bits += current_bit;
+	formated_bits += inverted_bits[i];
 
         if ((i + 1) % bits_per_group == 0) {
 	    formated_bits += " ";
@@ -56,8 +55,7 @@ std::string invert_bits(std::string bits) {
     std::string inverted_bits {};
 
     for (size_t i {bits.length()}; i --> 0;) {
-	std::string current_bit (1, bits[i]);
-        inverted_bits += current_bit;
+        inverted_bits += bits[i];
     }
 
     if (inverted_bits[0] == ' ') {
